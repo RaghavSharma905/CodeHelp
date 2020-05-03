@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<body bgcolor="000000" text="FFFFFF">
 <!-- saved from url=(0036)https://pixcel-1.github.io/CodeHelp/ -->
 <html lang="en" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script id="twitter-wjs" src="./detype Documentation ♦♦♦ Cafe Co_files/widgets.js.download"></script><script id="facebook-jssdk" src="./detype Documentation ♦♦♦ Cafe Co_files/sdk.js.download"></script><script src="file:///C:/Users/User/AppData/Local/Temp/prefix1095599237070139669/Cafe%20Codetype%20Documentation_files/analytics.js.download" type="text/javascript"></script>
 <script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app103.us.archive.org';v.server_ms=1971;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="file:///C:/Users/User/AppData/Local/Temp/prefix1095599237070139669/Cafe%20Codetype%20Documentation_files/ait-client-rewrite.js.download" charset="utf-8"></script>
@@ -16,15 +17,7 @@ __wbhack.init('http://web.archive.org/web');
 
 <meta name="description" content="Cafe Code Type Documentation (English)">
 <meta name="author" content="L. Schmidt">
-<meta name="keywords" content="GameCube, hacks, homebrew, wii u, action replay, wii, cheats, f-zero ax, f-zero gx, zelda, super mario">                                 
-                                   
-<link href="./detype Documentation ♦♦♦ Cafe Co_files/style.css" rel="stylesheet" type="text/css">
-<link href="file:///C:/Users/User/AppData/Local/Temp/prefix1095599237070139669/Cafe%20Codetype%20Documentation_files/indexbox.css" rel="stylesheet" type="text/css">   
-<link href="file:///C:/Users/User/AppData/Local/Temp/prefix1095599237070139669/Cafe%20Codetype%20Documentation_files/infobox.css" rel="stylesheet" type="text/css"> 
-<link href="./detype Documentation ♦♦♦ Cafe Co_files/wiki.css" rel="stylesheet" type="text/css"> 
-<link href="file:///C:/Users/User/AppData/Local/Temp/prefix1095599237070139669/Cafe%20Codetype%20Documentation_files/corners.css" rel="stylesheet" type="text/css"> 
-<link href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/menu_en.html" rel="import">
-    
+<meta name="keywords" content="GameCube, hacks, homebrew, wii u, action replay, wii, cheats, f-zero ax, f-zero gx, zelda, super mario">
 <script type="text/javascript">
 msg = " Cafe Codetype Documentation ♦♦♦ " ;
 position = 0;
@@ -195,20 +188,6 @@ animation: opc 2s;
   clear: both; 
       height: auto;
 }
-
-#menu a:hover, .topmenu.on a 
-{
- // color: #ff66ff;
- // background-color: #000;
-}
-
-.topmenu:hover ul 
-{
-  display:block;  
-  z-index:500;
-}
-           
-    
 .lilstrip:before
 {
     color: #FFF;
@@ -304,41 +283,6 @@ The general scheme looks like following:<br><br>
     
 As you can see the first byte (CC) defines the code type. P tells if a pointer is being used. S gives information about the data size. LLLLLLLL represents the location/address. KKKKKKKK instead of LLLLLLLL is used to express an offset between a pointer and the cheat's destination.<br>
     
-    
-Legend:<br>
-</p><ul>
-<li>CC = Code Type:<br>
-       00 = RAM Writes<br> 
-      01 = Patch/String Writes<br> 
-      02 = Skip Writes<br> 
-      03 = If equal<br> 
-      04 = If not equal<br> 
-      05 = If greater<br> 
-      06 = If lower<br> 
-      07 = If greater or equal<br> 
-      08 = If lower or equal<br> 
-      09 = Conditional logical AND<br> 
-      0A = Conditional logical OR<br> 
-      0B = If value between<br> 
-      0C = Add Time-Dependence<br> 
-      0D = Reset Timer<br> 
-      10 = Load Integer<br> 
-      11 = Store Integer<br> 
-      12 = Load Float<br> 
-      13 = Store Float<br> 
-      14 = Integer Operations<br> 
-      15 = Float Operations<br> 
-      20 = Memory fill<br> 
-      30 = Load Pointer<br> 
-      31 = Add Offset to Pointer<br> 
-      C0 = Execute ASM<br> 
-      C1 = Perform Cafe OS Syscalls<br>
-      D0 = Termination<br> 
-      D1 = No Operation<br>
-      D2 = Timer Termination<br> 
-      F0 = Corruptor<br> <br> 
-    An equivalent to the Wii's C2 Codetype (inject ASM) won't be possible because the Wii U's memory is far too large for the b (Branch) instruction to encircle the whole memory. But you can use a combination of the 01- and 00 Codetypes to effectively do the same. However, you can still execute ASM with the C0-Codetype.<br> <br> 
-    
     </li>
     <br> 
     <li>P = Pointer:<br>
@@ -364,87 +308,15 @@ Legend:<br>
       Maximum value = 0x50000000. Should be about 0x100000 bigger than the actual pointer. But you can increase or decrease it by feel. This is required to prevent inevitable freezes during loading times.</li>
     <br>
 <li>QQQQQQQQ = Permanent Pointer offset (signed):<br>
-      If the offset is negative write it as a signed hexadecimal integer without minus-sign. Example: -0x369C -&gt; FFFFC964. <i>Permanent</i> means that the offset addition has affect on all following codes unless another pointer is loaded.</li>
+      If the offset is negative write it as a signed hexadecimal integer without minus-sign. : -0x369C -&gt; FFFFC964. <i>Permanent</i> means that the offset addition has affect on all following codes unless another pointer is loaded.</li>
     <br>
 <li>KKKKKKKK = Volatile Pointer offset (signed):<br>
       Only the 00-Codetype uses unsigned offsets. <i>Volatile</i> means that the added offset has no affect on the following code(s).</li>
 </ul>   
    <br><br><br><br> The Cafe Codetypes + PPC code handler are developed by me.<br><br><br><br>
-   
-    <div class="fb-share-button fb_iframe_widget" data-href="http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php" data-layout="button_count" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=1036&amp;href=http%3A%2F%2Fcosmocortney.ddns.net%2Fenzy%2Fcafe_code_types_en.php&amp;layout=button_count&amp;locale=de_DE&amp;sdk=joey"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f11dd8cbfaf412" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="./detype Documentation ♦♦♦ Cafe Co_files/share_button.html" style="border: none; visibility: visible; width: 0px; height: 0px;"></iframe></span></div>&nbsp;&nbsp;
-        
-    <div class="fb-like fb_iframe_widget" data-href="http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php" data-layout="button_count" data-action="like" data-show-faces="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=1036&amp;href=http%3A%2F%2Fcosmocortney.ddns.net%2Fenzy%2Fcafe_code_types_en.php&amp;layout=button_count&amp;locale=de_DE&amp;sdk=joey&amp;show_faces=true"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f3e321ac95cc44c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./detype Documentation ♦♦♦ Cafe Co_files/like.html" style="border: none; visibility: visible; width: 0px; height: 0px;"></iframe></span></div>&nbsp;&nbsp;
          <br><br>
-            <iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="./detype Documentation ♦♦♦ Cafe Co_files/tweet_button.940e1bc455d9af25d6ec2f14e90d0d6c.en.html" data-url="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php"></iframe>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>&nbsp;&nbsp;
-            
-            <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" style="position: static; visibility: visible; width: 148px; height: 20px;" title="Twitter Follow Button" src="./detype Documentation ♦♦♦ Cafe Co_files/follow_button.940e1bc455d9af25d6ec2f14e90d0d6c.en.html" data-screen-name="CosmoCortney"></iframe>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
- 
-    
-    <p></p>
 </div>
     
-    
-    
-
-<div class="indexboxwiki">
-<span><a id="totop" href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#"></a></span>
-    <ul><br><font size="2">
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#write">RAM Writes [00]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#string">String Writes [01]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#skip">Skip Writes [02]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#equal">If Equal [03]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#not">If Not Equal [04]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#greater">If Greater Than [05]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#lower">If Lower Than [06]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#ge">If Greater or Equal [07]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#le">If Lower or Equal [08]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#and">Conditional AND [09]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#or">Conditional OR [0A]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#between">If Value Between [0B]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#time">Add Time-Dependence [0C]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#reset_time">Reset Timer [0D]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#load_int">Load Integer [10]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#store_int">Store Integer [11]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#load_float">Load Float [12]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#store_float">Store Float [13]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#int_op">Integer Operations [14]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#float_op">Float Operations [15]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#fill">Fill Memory [20]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#load_pointer">Load Pointer [30]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#add_offset">Add Offset to Pointer [31]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#asm">Execute ASM [C0]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#syscalls">Cafe OS Syscalls [C1]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#termination">Termination [D0]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#nop">No Operation [D1]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#time_term">Timer Termination [D2]</a></li>
-        <li><a href="http://web.archive.org/web/20180120003723/http://cosmocortney.ddns.net/enzy/cafe_code_types_en.php#corr">Corruptor [F0]</a></li></font>
-    </ul>
-</div>
-
-
-<div class="wikitable">
-    <h2 class="wikitablehead wikitopthead" id="write">RAM Write [00]</h2>
-<table class="wikitablebody">
-              <thead>
-               <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
-               </tr>
-               </thead>
-            
-
-<tbody>
-     <tr>
-
-      <td>8bit:<br>
-      <a class="monospace">
-        <font color="#0f0">00</font><font color="#f00">0</font><font color="#33f">0</font>0000 <font color="#84f">LLLLLLLL</font><br>
-        000000<font color="#f4f">VV</font> 00000000</a> <br><br>
-         This permanently writes the 8bit value of VV to address/location LLLLLLLL.
-</td>
-
       <td>Wind Waker HD: Infinite hearts (any region)<br>
            <a class="monospace">
 <font color="#0f0">00</font><font color="#f00">0</font><font color="#33f">0</font>0000 <font color="#84f">15073BC3</font><br>
@@ -511,8 +383,8 @@ Legend:<br>
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -579,8 +451,8 @@ Legend:<br>
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
     
@@ -668,8 +540,8 @@ Legend:<br>
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -742,8 +614,8 @@ Legend:<br>
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -813,8 +685,8 @@ Legend:<br>
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -886,8 +758,8 @@ Legend:<br>
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -961,8 +833,8 @@ Legend:<br>
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1033,8 +905,8 @@ Legend:<br>
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1109,8 +981,8 @@ Legend:<br>
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1183,8 +1055,8 @@ The green 1 indicates the relevant bit.<br>
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1249,8 +1121,8 @@ The green 1 indicates the relevant bit.<br>
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1317,8 +1189,8 @@ The green 1 indicates the relevant bit.<br>
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1360,8 +1232,8 @@ This will only allow the cheat code to be executed before the framecounter has r
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1406,8 +1278,8 @@ This will only allow the cheat code to be executed before the framecounter has r
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1465,8 +1337,8 @@ This will only allow the cheat code to be executed before the framecounter has r
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1527,8 +1399,8 @@ This will only allow the cheat code to be executed before the framecounter has r
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1570,8 +1442,8 @@ This will only allow the cheat code to be executed before the framecounter has r
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1611,8 +1483,8 @@ This will only allow the cheat code to be executed before the framecounter has r
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1663,8 +1535,8 @@ This will only allow the cheat code to be executed before the framecounter has r
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1717,8 +1589,8 @@ This will only allow the cheat code to be executed before the framecounter has r
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1764,8 +1636,8 @@ This will only allow the cheat code to be executed before the framecounter has r
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1814,8 +1686,8 @@ This will only allow the cheat code to be executed before the framecounter has r
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1840,8 +1712,8 @@ This will only allow the cheat code to be executed before the framecounter has r
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1879,8 +1751,8 @@ NNNN defines the number of lines excluding C000NNNN 60000000, but including the 
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1914,8 +1786,8 @@ NNNN defines the number of lines excluding C000NNNN 60000000, but including the 
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1942,8 +1814,8 @@ NNNN defines the number of lines excluding C000NNNN 60000000, but including the 
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -1970,8 +1842,8 @@ NNNN defines the number of lines excluding C000NNNN 60000000, but including the 
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -2003,8 +1875,8 @@ NNNN defines the number of lines excluding C000NNNN 60000000, but including the 
 <table class="wikitablebody">
               <thead>
                <tr>
-               <th width="340px" class="cornertopleft">Formatting</th>
-               <th width="340px" class="cornertopright">Example</th>
+               <th width="340px" class="cornertopleft"></th>
+               <th width="340px" class="cornertopright"></th>
                </tr>
                </thead>
             
@@ -2045,7 +1917,6 @@ NNNN defines the number of lines excluding C000NNNN 60000000, but including the 
      FILE ARCHIVED ON 00:37:23 Jan 20, 2018 AND RETRIEVED FROM THE
      INTERNET ARCHIVE ON 20:57:09 Jul 17, 2019.
      JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
      ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
      SECTION 108(a)(3)).
 -->
@@ -2061,4 +1932,3 @@ playback timings (ms):
   RedisCDXSource: 240.796
   PetaboxLoader3.resolve: 281.146 (2)
   load_resource: 275.64
---><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./detype Documentation ♦♦♦ Cafe Co_files/translate_24dp.png" width="20" height="20" alt="Google 翻訳"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">原文</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">翻訳を改善する</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./detype Documentation ♦♦♦ Cafe Co_files/saved_resource.html"></iframe><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
